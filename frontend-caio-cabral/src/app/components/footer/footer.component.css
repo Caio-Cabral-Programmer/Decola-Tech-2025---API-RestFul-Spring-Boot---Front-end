@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #f8f9fa;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.social-btn {
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.linkedin { background-color: #0077B5; }
+.github { background-color: #333; }
+.notion { background-color: #000000; }
+.email {
+  background-color: #D44638;
+  border: none;
+  cursor: pointer;
+}
+
+.signature {
+  text-align: center;
+  font-style: italic;
+  color: #6c757d;
+}

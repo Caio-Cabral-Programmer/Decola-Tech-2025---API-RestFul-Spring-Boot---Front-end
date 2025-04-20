@@ -1,0 +1,48 @@
+<div class="create-container">
+  <h2 class="create-title">Criar</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="create-form">
+    <div class="form-group">
+      <label for="nome">Nome do Usuário:</label>
+      <input type="text" id="nome" formControlName="nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroConta">Número da Conta:</label>
+      <input type="text" id="numeroConta" formControlName="numeroConta" required>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroAgencia">Número da Agência:</label>
+      <input type="text" id="numeroAgencia" formControlName="numeroAgencia" required>
+    </div>
+
+    <div class="form-group">
+      <label for="saldo">Saldo:</label>
+      <input type="number" id="saldo" formControlName="saldo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="limiteConta">Limite da Conta:</label>
+      <input type="number" id="limiteConta" formControlName="limiteConta" required>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroCartao">Número do Cartão:</label>
+      <input type="text" id="numeroCartao" formControlName="numeroCartao" required>
+    </div>
+
+    <div class="form-group">
+      <label for="limiteCartao">Limite do Cartão:</label>
+      <input type="number" id="limiteCartao" formControlName="limiteCartao" required>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="save-btn" [disabled]="!userForm.valid">Criar e Salvar</button>
+      <button type="button" class="back-btn" (click)="goToMenu()">Menu Principal</button>
+    </div>
+  </form>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+</div>
