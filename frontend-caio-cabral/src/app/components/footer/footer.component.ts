@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   copyEmail() {
-    const email = 'caiocabral.ep@gmail.com';
+    const email = 'seu-email@exemplo.com';
     navigator.clipboard.writeText(email).then(() => {
       alert('Email copiado para a área de transferência!');
     });
