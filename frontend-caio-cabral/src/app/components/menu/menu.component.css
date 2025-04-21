@@ -59,13 +59,19 @@
 .view-all { background-color: #6c757d; }
 
 .back-btn {
-  padding: 10px 20px;
+  padding: 12px 30px;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
+  width: 250px;
+  height: 60px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto no botão */
 }
 
 .back-btn:hover {

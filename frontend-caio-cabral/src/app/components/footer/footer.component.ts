@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   copyEmail() {
-    const email = 'seu-email@exemplo.com';
+    const email = 'caiocabral.ep@gmail.com';
     navigator.clipboard.writeText(email).then(() => {
       alert('Email copiado para a área de transferência!');
     });
