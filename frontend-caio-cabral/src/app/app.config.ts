@@ -1,3 +1,4 @@
+// app.config.ts (toda configuração aqui)
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
@@ -11,5 +12,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     provideAnimations(),
     provideClientHydration()
+    // Todos os providers globais aqui
   ]
 };
