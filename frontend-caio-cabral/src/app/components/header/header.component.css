@@ -4,11 +4,12 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
+  height: 300px;
 }
 
 .header-image img {
   width: 100%;
   height: auto;
-  max-height: 150px;
+  max-height: 300px; /* Aqui é onde ajusta a altura do header */
   object-fit: cover;
 }

@@ -1,10 +1,16 @@
-.menu-container {
+/* Base styles - Assumindo que o header tem altura variável dependendo do dispositivo */
+.menu-container { /* Estas medidas foram feitas para uma tela de 1920x1080 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  padding-top: 170px; /* Ajuste para o header */
-  padding-bottom: 150px; /* Ajuste para o footer */
+  width: 100%;
+  padding: 100px; /* Reduzido para não ocupar tanto espaço vertical */
+  box-sizing: border-box;
+
+  /* Valores base para desktop grande */
+  margin-top: 100px;
+  position: relative;
+  z-index: 1; /* Menor que o z-index do header */
 }
 
 .menu-title {
@@ -15,6 +21,7 @@
   background-color: #f0f8ff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o texto em telas menores */
 }
 
 .button-group {
@@ -23,6 +30,8 @@
   justify-content: center;
   gap: 15px;
   margin-bottom: 30px;
+  width: 100%; /* Garante que ocupe toda a largura disponível */
+  max-width: 800px; /* Limita a largura máxima em telas grandes */
 }
 
 .menu-btn {
@@ -33,6 +42,9 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s;
+  flex: 1 1 auto; /* Permite que os botões cresçam e encolham */
+  min-width: 120px; /* Largura mínima para evitar botões muito estreitos */
+  text-align: center;
 }
 
 .menu-btn:hover {
@@ -48,7 +60,7 @@
 
 .back-btn {
   padding: 10px 20px;
-  background-color: #6c757d;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -57,5 +69,112 @@
 }
 
 .back-btn:hover {
-  background-color: #5a6268;
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Query específica para notebooks */
+@media screen and (max-width: 1440px) {
+  .menu-container {
+    margin-top: 280px; /* Ajustado para notebooks */
+    padding: 20px;
+  }
+
+  .menu-title {
+    font-size: 1.9rem;
+    margin-bottom: 25px;
+  }
+
+  .button-group {
+    max-width: 700px;
+  }
+}
+
+/* Media Query específica para notebooks menores */
+@media screen and (max-width: 1366px) { /* Esse é o meu notebook Dell */
+  .menu-container {
+    margin-top: 260px; /* Ajustado para notebooks menores */
+    padding: 0px;
+    margin-top: 100px;
+    position: relative;
+    z-index: 1; /* Menor que o z-index do header */
+  }
+
+  .menu-title {
+    font-size: 1.8rem;
+  }
+
+  .button-group {
+    max-width: 650px;
+    gap: 12px;
+  }
+
+  .menu-btn {
+    min-width: 110px;
+    padding: 10px 18px;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+  .menu-container {
+    margin-top: 250px; /* Header menor em tablets */
+    padding: 15px;
+  }
+
+  .menu-title {
+    font-size: 1.7rem;
+  }
+
+  .menu-btn {
+    min-width: 100px;
+    padding: 10px 15px;
+  }
+}
+
+/* Dispositivos móveis grandes */
+@media screen and (max-width: 768px) {
+  .menu-container {
+    margin-top: 200px; /* Header ainda menor em dispositivos móveis */
+    padding: 10px;
+  }
+
+  .menu-title {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+  }
+
+  .button-group {
+    gap: 10px;
+  }
+
+  .menu-btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Dispositivos móveis pequenos */
+@media screen and (max-width: 480px) {
+  .menu-container {
+    margin-top: 150px; /* Header menor em dispositivos móveis pequenos */
+    padding: 10px 5px;
+  }
+
+  .menu-title {
+    font-size: 1.3rem;
+    width: 90%;
+  }
+
+  .button-group {
+    flex-direction: column; /* Empilha os botões em telas muito pequenas */
+    width: 90%;
+  }
+
+  .menu-btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
 }
