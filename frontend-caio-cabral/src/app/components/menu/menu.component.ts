@@ -10,26 +10,27 @@ export class MenuComponent {
   constructor(private router: Router) {}
 
   goToCreate() {
-    this.router.navigate(['/create']);
+    console.log('Navegando para /create');
+    this.router.navigateByUrl('/create');
   }
 
   goToDelete() {
-    this.router.navigate(['/delete']);
+    this.router.navigateByUrl('/delete');
   }
 
   goToUpdate() {
-    this.router.navigate(['/update']);
+    this.router.navigateByUrl('/update');
   }
 
   goToView() {
-    this.router.navigate(['/view']);
+    this.router.navigateByUrl('/view');
   }
 
   goToViewAll() {
-    this.router.navigate(['/view-all']);
+    this.router.navigateByUrl('/view-all');
   }
 
   goToHome() {
-    this.router.navigate(['/home']);
+    this.router.navigateByUrl('/home');
   }
 }

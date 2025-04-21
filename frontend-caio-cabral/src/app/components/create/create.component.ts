@@ -1,30 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-create',
-  standalone: true, // Mantenha para Angular 16+
+  standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule // ESSE É O IMPORT CRUCIAL PARA RESOLVER O ERRO
+    FormsModule,
+    ReactiveFormsModule
   ],
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent {
-  userForm: FormGroup;
+export class CreateComponent implements OnInit {
+  userForm!: FormGroup;
   successMessage: string = '';
 
   constructor(
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private apiService: ApiService,
     private router: Router
-  ) {
-    this.userForm = this.fb.group({
+  ) { }
+
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  initForm(): void {
+    this.userForm = this.formBuilder.group({
       nome: ['', Validators.required],
       numeroConta: ['', Validators.required],
       numeroAgencia: ['', Validators.required],
@@ -35,27 +43,41 @@ export class CreateComponent {
     });
   }
 
-  ngOnInit(): void {}
-
   onSubmit(): void {
     if (this.userForm.valid) {
       const user: User = this.userForm.value;
       this.apiService.createUser(user).subscribe({
         next: (response) => {
-          this.successMessage = 'Usuário Criado com Sucesso!';
-          this.userForm.reset();
+          console.log('Usuário criado com sucesso', response);
+          this.successMessage = 'Usuário criado com sucesso!';
           setTimeout(() => {
-            this.successMessage = '';
-          }, 3000);
+            this.router.navigate(['/view-all']);
+          }, 2000);
         },
         error: (error) => {
-          console.error('Erro ao criar usuário:', error);
+          console.error('Erro ao criar usuário', error);
         }
       });
+    } else {
+      this.markFormGroupTouched(this.userForm);
     }
   }
 
+  // Helper method to mark all controls as touched
+  markFormGroupTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+      if ((control as any).controls) {
+        this.markFormGroupTouched(control as FormGroup);
+      }
+    });
+  }
+
+  cancel(): void {
+    this.router.navigate(['/view-all']);
+  }
+
   goToMenu(): void {
-    this.router.navigate(['/menu']);
+    this.router.navigate(['/']);
   }
 }
