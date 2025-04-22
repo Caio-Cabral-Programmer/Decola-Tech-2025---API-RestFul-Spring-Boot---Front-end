@@ -8,30 +8,31 @@
       <div *ngIf="users.length > 0" class="users-list">
         <div *ngFor="let user of users" class="user-card">
           <div class="user-header">
-            <h3>{{ user.nome }}</h3>
+            <h3>{{ user.name }}</h3>
             <span class="user-id">ID: {{ user.id }}</span>
           </div>
 
           <div class="user-details">
             <div class="detail-row">
               <span class="detail-label">Conta:</span>
-              <span class="detail-value">{{ user.numeroAgencia }}/{{ user.numeroConta }}</span>
+              <span class="detail-value">{{ user.account.agency }}/{{ user.account.number }}</span>
             </div>
 
             <div class="detail-row">
               <span class="detail-label">Saldo:</span>
-              <span class="detail-value">{{ user.saldo | currency:'BRL' }}</span>
+              <span class="detail-value">{{ user.account.balance | currency:'BRL' }}</span>
             </div>
 
             <div class="detail-row">
               <span class="detail-label">Limite:</span>
-              <span class="detail-value">{{ user.limiteConta | currency:'BRL' }}</span>
+              <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>
             </div>
 
             <div class="detail-row">
               <span class="detail-label">Cartão:</span>
-              <span class="detail-value">{{ user.numeroCartao }}</span>
+              <span class="detail-value">{{ user.card.number }}</span>
             </div>
+            
           </div>
         </div>
       </div>
@@ -41,6 +42,5 @@
       </div>
 
       <button class="back-btn" (click)="goToMenu()">Menu Principal</button>
-
   </div>  
 </div>

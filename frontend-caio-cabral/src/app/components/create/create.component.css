@@ -108,6 +108,22 @@
   font-weight: bold;
 }
 
+/* Adicione isso ao seu arquivo create.component.css */
+.form-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #28a745;
+  font-size: 1.2rem;
+}
+
 /* Media Query para notebooks grandes (até 1440px) */
 @media screen and (max-width: 1440px) {
   .create-container {
