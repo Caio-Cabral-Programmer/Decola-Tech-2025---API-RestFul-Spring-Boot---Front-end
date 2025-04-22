@@ -1,10 +1,11 @@
+/* Base styles para telas grandes (1920x1080) */
 .view-container {
   padding: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
   max-width: 500px;
   margin: auto;
-  margin-top: -180px; /* Adiciona ou diminue o espaço entre o container e o cabeçalho */
+  margin-top: -180px; /* Mantemos o valor original que funciona bem para telas grandes */
 }
 
 .view-title {
@@ -65,6 +66,266 @@
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #495057;
+  width: 200px;
+}
+
+.detail-value {
+  color: #212529;
+  flex-grow: 1;
+}
+
+.not-found {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.back-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 20px;
+  background-color: #f0f8ff;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #abc6e1;
+
+}
+
+/* Media Query para notebooks grandes (até 1440px) */
+@media screen and (max-width: 1440px) {
+  .view-container {
+    max-width: 450px;
+    margin-top: -200px; /* Valor mais negativo para subir o container */
+  }
+  
+  .view-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .view-form {
+    padding: 25px;
+  }
+  
+  .search-id input {
+    padding: 9px;
+    font-size: 0.95rem;
+  }
+  
+  .search-btn, .back-btn {
+    padding: 9px 18px;
+    font-size: 0.95rem;
+  }
+  
+  .user-details {
+    padding: 25px;
+  }
+}
+
+/* Media Query para notebooks menores (até 1366px) */
+@media screen and (max-width: 1366px) {
+  .view-container {
+    max-width: 420px;
+    margin-top: -220px; /* Valor mais negativo para subir o container */
+  }
+  
+  .view-title {
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+    padding: 8px 16px;
+  }
+  
+  .view-form {
+    padding: 22px;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .user-details {
+    padding: 22px;
+  }
+}
+
+/* Media Query para tablets (até 1024px) */
+@media screen and (max-width: 1024px) {
+  .view-container {
+    max-width: 380px;
+    margin-top: -200px; /* Valor mais negativo para subir o container */
+  }
+  
+  .view-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .view-form {
+    padding: 20px;
+  }
+  
+  .search-id label {
+    font-size: 0.9rem;
+  }
+  
+  .search-id input {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .search-btn, .back-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .user-details {
+    padding: 20px;
+  }
+  
+  .detail-label {
+    width: 150px;
+  }
+}
+
+/* Media Query para tablets menores e iPads (até 768px) */
+@media screen and (max-width: 768px) {
+  .view-container {
+    max-width: 90%;
+    margin-top: -180px; /* Valor mais negativo para subir o container */
+  }
+  
+  .view-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+  }
+  
+  .view-form {
+    padding: 18px;
+  }
+  
+  .search-id {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-btn, .back-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .user-details {
+    padding: 18px;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .detail-label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+/* Media Query para smartphones (até 480px) */
+@media screen and (max-width: 480px) {
+  .view-container {
+    max-width: 95%;
+    margin-top: -150px; /* Valor mais negativo para subir o container */
+  }
+  
+  .view-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding: 7px 12px;
+  }
+  
+  .view-form {
+    padding: 15px;
+  }
+  
+  .search-id label {
+    font-size: 0.85rem;
+  }
+  
+  .search-id input {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
+  
+  .search-btn, .back-btn {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .user-details {
+    padding: 15px;
+  }
+}
+
+/* Media Query para smartphones pequenos (até 320px) */
+@media screen and (max-width: 320px) {
+  .view-container {
+    margin-top: -120px; /* Valor mais negativo para subir o container */
+  }
+  
+  .view-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+  }
+  
+  .view-form {
+    padding: 12px;
+  }
+  
+  .search-id input {
+    padding: 6px;
+    font-size: 0.75rem;
+  }
+  
+  .search-btn, .back-btn {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
+  
+  .user-details {
+    padding: 12px;
+  }
 }
 
 .detail-row {

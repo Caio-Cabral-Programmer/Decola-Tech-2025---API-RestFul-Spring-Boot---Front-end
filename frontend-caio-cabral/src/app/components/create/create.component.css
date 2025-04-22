@@ -1,11 +1,11 @@
+/* Base styles para telas grandes (1920x1080) */
 .create-container {
   padding: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
   max-width: 500px;
   margin: auto;
-  margin-top: -180px; /* Adiciona ou diminue o espaço entre o container e o cabeçalho */
-
+  margin-top: -180px; 
 }
 
 .create-title {
@@ -95,7 +95,6 @@
 
 .back-btn:hover {
   background-color: #abc6e1;
-
 }
 
 .success-message {
@@ -107,4 +106,193 @@
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
+}
+
+/* Media Query para notebooks grandes (até 1440px) */
+@media screen and (max-width: 1440px) {
+  .create-container {
+    max-width: 450px;
+    margin-top: -200px; /* Valor mais negativo para subir o container */
+  }
+  
+  .create-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .create-form {
+    padding: 25px;
+    gap: 18px;
+  }
+  
+  .form-group input {
+    padding: 9px;
+    font-size: 0.95rem;
+  }
+  
+  .save-btn, .back-btn {
+    padding: 9px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Media Query para notebooks menores (até 1366px) */
+@media screen and (max-width: 1366px) {
+  .create-container {
+    max-width: 420px;
+    margin-top: -220px; /* Valor mais negativo para subir o container */
+  }
+  
+  .create-title {
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+    padding: 8px 16px;
+  }
+  
+  .create-form {
+    padding: 22px;
+    gap: 16px;
+  }
+  
+  .form-group input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .save-btn, .back-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Media Query para tablets (até 1024px) */
+@media screen and (max-width: 1024px) {
+  .create-container {
+    max-width: 380px;
+    margin-top: -200px; /* Valor mais negativo para subir o container */
+  }
+  
+  .create-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .create-form {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .form-group input {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .save-btn, .back-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Media Query para tablets menores e iPads (até 768px) */
+@media screen and (max-width: 768px) {
+  .create-container {
+    max-width: 90%;
+    margin-top: -180px; /* Valor mais negativo para subir o container */
+  }
+  
+  .create-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+  }
+  
+  .create-form {
+    padding: 18px;
+    gap: 14px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .save-btn, .back-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .back-btn {
+    order: 2; /* Coloca o botão de voltar abaixo do botão de salvar */
+  }
+}
+
+/* Media Query para smartphones (até 480px) */
+@media screen and (max-width: 480px) {
+  .create-container {
+    max-width: 95%;
+    margin-top: -150px; /* Valor mais negativo para subir o container */
+  }
+  
+  .create-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding: 7px 12px;
+  }
+  
+  .create-form {
+    padding: 15px;
+    gap: 12px;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  
+  .form-group input {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
+  
+  .save-btn, .back-btn {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .success-message {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Media Query para smartphones pequenos (até 320px) */
+@media screen and (max-width: 320px) {
+  .create-container {
+    margin-top: -120px; /* Valor mais negativo para subir o container */
+  }
+  
+  .create-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+  }
+  
+  .create-form {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .form-group input {
+    padding: 6px;
+    font-size: 0.75rem;
+  }
+  
+  .save-btn, .back-btn {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
 }

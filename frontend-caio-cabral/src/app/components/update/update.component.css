@@ -1,11 +1,11 @@
-/* Estilos para o componente de atualização */
+/* Base styles para telas grandes (1920x1080) */
 .update-container {
   padding: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
   max-width: 500px;
   margin: auto;
-  margin-top: -180px; /* Adiciona ou diminue o espaço entre o container e o cabeçalho */
+  margin-top: -180px; /* Mantemos o valor original que funciona bem para telas grandes */
 }
 
 .update-title {
@@ -132,5 +132,183 @@
 .back-btn:hover {
   background-color: #abc6e1;
 
+}
+
+/* Media Query para notebooks grandes (até 1440px) */
+@media screen and (max-width: 1440px) {
+  .update-container {
+    max-width: 450px;
+    margin-top: -200px; /* Valor mais negativo para subir o container */
+  }
+  
+  .update-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+  
+  .update-form {
+    padding: 25px;
+  }
+  
+  .form-control {
+    padding: 9px;
+    font-size: 0.95rem;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    padding: 9px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Media Query para notebooks menores (até 1366px) */
+@media screen and (max-width: 1366px) {
+  .update-container {
+    max-width: 420px;
+    margin-top: -220px; /* Valor mais negativo para subir o container */
+  }
+  
+  .update-title {
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+    padding: 8px 16px;
+  }
+  
+  .update-form {
+    padding: 22px;
+  }
+  
+  .form-control {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Media Query para tablets (até 1024px) */
+@media screen and (max-width: 1024px) {
+  .update-container {
+    max-width: 380px;
+    margin-top: -200px; /* Valor mais negativo para subir o container */
+  }
+  
+  .update-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .update-form {
+    padding: 20px;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .form-control {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Media Query para tablets menores e iPads (até 768px) */
+@media screen and (max-width: 768px) {
+  .update-container {
+    max-width: 90%;
+    margin-top: -180px; /* Valor mais negativo para subir o container */
+  }
+  
+  .update-title {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    padding: 8px 15px;
+  }
+  
+  .update-form {
+    padding: 18px;
+  }
+  
+  .search-id {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Media Query para smartphones (até 480px) */
+@media screen and (max-width: 480px) {
+  .update-container {
+    max-width: 95%;
+    margin-top: -150px; /* Valor mais negativo para subir o container */
+  }
+  
+  .update-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding: 7px 12px;
+  }
+  
+  .update-form {
+    padding: 15px;
+  }
+  
+  .form-group label {
+    font-size: 0.85rem;
+  }
+  
+  .form-control {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Media Query para smartphones pequenos (até 320px) */
+@media screen and (max-width: 320px) {
+  .update-container {
+    margin-top: -120px; /* Valor mais negativo para subir o container */
+  }
+  
+  .update-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+  }
+  
+  .update-form {
+    padding: 12px;
+  }
+  
+  .form-control {
+    padding: 6px;
+    font-size: 0.75rem;
+  }
+  
+  .search-btn, .btn, .back-btn {
+    padding: 7px;
+    font-size: 0.8rem;
+  }
 }
 
