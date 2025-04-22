@@ -53,7 +53,7 @@
 
 .create { background-color: #28a745; }
 .delete { background-color: #dc3545; }
-.update { background-color: #ffc107; color: #212529; }
+.update { background-color: #ffc107; color: white; }
 .view { background-color: #17a2b8; }
 .view-all { background-color: #6c757d; }
 

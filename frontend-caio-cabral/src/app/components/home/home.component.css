@@ -27,6 +27,7 @@
   margin-top: -500px; /* Ajuste da distância entre o header e o conteúdo */
   position: relative;
   z-index: 1; /* Menor que o z-index do header */
+  
 }
 
 h1 {
@@ -100,7 +101,7 @@ p {
 
   .home-container {
     top: 0px; /* Ajusta a distância do topo da página */
-    margin-top: -290px; /* Ajuste da distância entre o header e o conteúdo */
+    margin-top: -380px; /* Ajuste da distância entre o header e o conteúdo */
     position: relative;
     z-index: 1; /* Menor que o z-index do header */
   }
