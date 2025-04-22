@@ -4,11 +4,10 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 80px; /* Reduzido para não ocupar tanto espaço vertical */
+  padding: 0px; /* Reduzido para não ocupar tanto espaço vertical */
   box-sizing: border-box;
-
   /* Valores base para desktop grande */
-  margin-top: 100px;
+  margin-top: -180px;
   position: relative;
   z-index: 1; /* Menor que o z-index do header */
 }

@@ -10,10 +10,17 @@ import { MenuComponent } from './components/menu/menu.component';
 // import { ViewAllComponent } from './components/view-all/view-all.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'menu', component: MenuComponent },
-  // Usando loadComponent para componentes standalone
+  //{ path: '', redirectTo: '/home', pathMatch: 'full' },
+    // Usando loadComponent para componentes standalone
+
+    {
+      path: 'home',
+      loadComponent: () => import('./components/home/home.component').then(m => m.HomeComponent)
+    },
+    {
+      path: 'menu',
+      loadComponent: () => import('./components/menu/menu.component').then(m => m.MenuComponent)
+    },
   {
     path: 'create',
     loadComponent: () => import('./components/create/create.component').then(m => m.CreateComponent)

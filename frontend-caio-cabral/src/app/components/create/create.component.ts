@@ -25,11 +25,15 @@ export class CreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private apiService: ApiService,
     private router: Router
-  ) { }
+  ) {
+    this.router.events.subscribe(event => {
+      console.log('Evento de rota:', event); // Isso mostrará no console toda a navegação que ocorre na aplicação.
+    });
+  }
 
   ngOnInit(): void {
     this.initForm();
-  }
+    }
 
   initForm(): void {
     this.userForm = this.formBuilder.group({
@@ -77,7 +81,9 @@ export class CreateComponent implements OnInit {
     this.router.navigate(['/view-all']);
   }
 
-  goToMenu(): void {
-    this.router.navigate(['/']);
+  goToMenu() {
+    this.router.navigate(['/menu']);
   }
+
 }
+
