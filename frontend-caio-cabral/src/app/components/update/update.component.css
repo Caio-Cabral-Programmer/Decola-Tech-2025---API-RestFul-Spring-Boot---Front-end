@@ -6,7 +6,6 @@
   max-width: 500px;
   margin: auto;
   margin-top: -180px; /* Adiciona ou diminue o espaço entre o container e o cabeçalho */
-
 }
 
 .update-title {
@@ -117,9 +116,12 @@
 }
 
 .back-btn {
+  display: block;
+  margin: 30px auto 0;
   padding: 10px 20px;
   background-color: #f0f8ff;
   color: #333;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;

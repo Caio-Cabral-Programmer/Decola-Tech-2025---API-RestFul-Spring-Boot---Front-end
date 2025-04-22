@@ -55,7 +55,7 @@
 .delete { background-color: #dc3545; }
 .update { background-color: #ffc107; color: white; }
 .view { background-color: #17a2b8; }
-.view-all { background-color: #6c757d; }
+.view-all { background-color: orangered; }
 
 .back-btn {
   padding: 10px 20px;
