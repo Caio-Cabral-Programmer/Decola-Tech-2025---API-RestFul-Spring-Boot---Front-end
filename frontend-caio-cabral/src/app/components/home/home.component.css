@@ -48,6 +48,7 @@ p {
   padding: 12px 30px;
   background-color: #007bff;
   color: white;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
