@@ -21,10 +21,10 @@
   align-items: center;
   justify-content: center;
   height: calc(100vh - 250px); /* Ajuste para o header e footer */
-  padding-top: 0px; /* Altura do header */
+  padding-top: 300px; /* Altura do header */
   padding-bottom: 0px; /* Altura do footer */
   text-align: center;
-  margin-top: -360px; /* Ajuste da distância entre o header e o conteúdo */
+  margin-top: -500px; /* Ajuste da distância entre o header e o conteúdo */
   position: relative;
   z-index: 1; /* Menor que o z-index do header */
 }
@@ -99,7 +99,7 @@ p {
   }
 
   .home-container {
-    top: 60px; /* Ajusta a distância do topo da página */
+    top: 0px; /* Ajusta a distância do topo da página */
     margin-top: -290px; /* Ajuste da distância entre o header e o conteúdo */
     position: relative;
     z-index: 1; /* Menor que o z-index do header */

@@ -81,6 +81,6 @@ export class DeleteComponent implements OnInit {
   }
 
   goToMenu(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu']);
   }
 }
