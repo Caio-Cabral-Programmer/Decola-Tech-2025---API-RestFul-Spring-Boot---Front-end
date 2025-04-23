@@ -9,11 +9,10 @@
         
       <div *ngIf="user" class="user-details">
         <div class="detail-row">
-          <span class="detail-label">Nome do Usuário:</span>
+          <span class="detail-label">Nome:</span>
           <span class="detail-value">{{ user.name }}</span>
         </div>
 
-        <h4>Informações da Conta</h4>
         <div class="detail-row">
           <span class="detail-label">Número da Conta:</span>
           <span class="detail-value">{{ user.account.number }}</span>
@@ -34,7 +33,6 @@
           <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>
         </div>
 
-        <h4>Informações do Cartão</h4>
         <div class="detail-row">
           <span class="detail-label">Número do Cartão:</span>
           <span class="detail-value">{{ user.card.number }}</span>

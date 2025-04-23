@@ -50,7 +50,7 @@ p {
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
   width: 200px;

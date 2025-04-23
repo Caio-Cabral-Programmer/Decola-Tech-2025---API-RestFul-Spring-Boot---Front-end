@@ -14,8 +14,8 @@
 
           <div class="user-details">
             <div class="detail-row">
-              <span class="detail-label">Conta:</span>
-              <span class="detail-value">{{ user.account.agency }}/{{ user.account.number }}</span>
+              <span class="detail-label">Conta | Agência:</span>
+              <span class="detail-value">{{ user.account.agency }} | {{ user.account.number }}</span>
             </div>
 
             <div class="detail-row">
@@ -24,13 +24,18 @@
             </div>
 
             <div class="detail-row">
-              <span class="detail-label">Limite:</span>
+              <span class="detail-label">Limite da Conta:</span>
               <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>
             </div>
 
             <div class="detail-row">
               <span class="detail-label">Cartão:</span>
               <span class="detail-value">{{ user.card.number }}</span>
+            </div>
+
+            <div class="detail-row">
+              <span class="detail-label">Limite do Cartão:</span>
+              <span class="detail-value">{{ user.card.limit | currency:'BRL' }}</span>
             </div>
             
           </div>

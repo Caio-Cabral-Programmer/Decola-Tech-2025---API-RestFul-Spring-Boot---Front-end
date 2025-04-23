@@ -28,25 +28,52 @@ export class UpdateComponent implements OnInit {
     private apiService: ApiService,
     private router: Router
   ) {
+    // Inicializa o formulário com a estrutura aninhada
     this.userForm = this.fb.group({
-      nome: ['', Validators.required],
-      numeroConta: ['', Validators.required],
-      numeroAgencia: ['', Validators.required],
-      saldo: [0, Validators.required],
-      limiteConta: [0, Validators.required],
-      numeroCartao: ['', Validators.required],
-      limiteCartao: [0, Validators.required]
+      name: ['', Validators.required],
+      account: this.fb.group({
+        number: ['', Validators.required],
+        agency: ['', Validators.required],
+        balance: [0, Validators.required],
+        limit: [0, Validators.required]
+      }),
+      card: this.fb.group({
+        number: ['', Validators.required],
+        limit: [0, Validators.required]
+      })
     });
   }
 
   ngOnInit(): void {}
 
+  /**
+   * Busca um usuário pelo ID e preenche o formulário com seus dados
+   * Esta função busca o usuário da API e adapta os dados para o formato do formulário
+   */
   searchUser(): void {
     if (this.userId) {
       this.apiService.getUser(this.userId).subscribe({
         next: (user) => {
           this.user = user;
-          this.userForm.patchValue(user);
+          
+          // Mapeia os dados do usuário para a nova estrutura do formulário
+          // Aqui estamos assumindo que a API retorna um objeto com a estrutura antiga
+          // e estamos convertendo para a estrutura que nosso formulário espera
+          const formattedUser = {
+            name: user.name || '',
+            account: {
+              number: user.account?.number || '',
+              agency: user.account?.agency || '',
+              balance: user.account?.balance || 0,
+              limit: user.account?.limit || 0
+            },
+            card: {
+              number: user.card?.number || '',
+              limit: user.card?.limit || 0
+            }
+          };
+          
+          this.userForm.patchValue(formattedUser);
           this.searched = true;
         },
         error: (error) => {
@@ -58,9 +85,30 @@ export class UpdateComponent implements OnInit {
     }
   }
 
+  /**
+   * Envia o formulário para atualizar o usuário
+   * Esta função pega os dados do formulário e os envia para a API no formato correto
+   */
   onSubmit(): void {
     if (this.userForm.valid && this.userId) {
-      const updatedUser: User = this.userForm.value;
+      const formValue = this.userForm.value;
+      
+      // Mapeia os dados do formulário para a estrutura esperada pela API
+      // Aqui estamos criando um objeto User com a estrutura correta
+      const updatedUser: User = {
+        name: formValue.name,
+        account: {
+          number: formValue.account.number,
+          agency: formValue.account.agency,
+          balance: formValue.account.balance,
+          limit: formValue.account.limit
+        },
+        card: {
+          number: formValue.card.number,
+          limit: formValue.card.limit
+        }
+      };
+      
       this.apiService.updateUser(this.userId, updatedUser).subscribe({
         next: (response) => {
           this.successMessage = 'Usuário Atualizado com Sucesso!';
@@ -75,6 +123,9 @@ export class UpdateComponent implements OnInit {
     }
   }
 
+  /**
+   * Navega para o menu principal
+   */
   goToMenu(): void {
     this.router.navigate(['/menu']);
   }

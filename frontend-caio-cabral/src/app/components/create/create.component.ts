@@ -59,32 +59,6 @@ export class CreateComponent implements OnInit {
     });
   }
 
-  // Métodos para adicionar novos itens aos arrays
-  addFeature(): void {
-    const features = this.userForm.get('features') as FormArray;
-    features.push(this.createItemFormGroup());
-  }
-
-  addNews(): void {
-    const news = this.userForm.get('news') as FormArray;
-    news.push(this.createItemFormGroup());
-  }
-
-  // Métodos para remover itens dos arrays
-  removeFeature(index: number): void {
-    const features = this.userForm.get('features') as FormArray;
-    if (features.length > 1) {
-      features.removeAt(index);
-    }
-  }
-
-  removeNews(index: number): void {
-    const news = this.userForm.get('news') as FormArray;
-    if (news.length > 1) {
-      news.removeAt(index);
-    }
-  }
-
   onSubmit(): void {
     if (this.userForm.valid) {
       const user: User = this.userForm.value;
@@ -122,5 +96,34 @@ export class CreateComponent implements OnInit {
   goToMenu() {
     this.router.navigate(['/menu']);
   }
+
+  /*  Funções sem utilizar no momento:
+  // Métodos para adicionar novos itens aos arrays
+  addFeature(): void {
+    const features = this.userForm.get('features') as FormArray;
+    features.push(this.createItemFormGroup());
+  }
+
+  addNews(): void {
+    const news = this.userForm.get('news') as FormArray;
+    news.push(this.createItemFormGroup());
+  }
+
+  // Métodos para remover itens dos arrays
+  removeFeature(index: number): void {
+    const features = this.userForm.get('features') as FormArray;
+    if (features.length > 1) {
+      features.removeAt(index);
+    }
+  }
+
+  removeNews(index: number): void {
+    const news = this.userForm.get('news') as FormArray;
+    if (news.length > 1) {
+      news.removeAt(index);
+    }
+  }
+*/
+
 }
 

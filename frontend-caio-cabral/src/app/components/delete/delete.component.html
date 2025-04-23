@@ -11,13 +11,11 @@
       <h3>Detalhes do Usuário</h3>
       <p><strong>Nome:</strong> {{ user.name }}</p>
       
-      <h4>Informações da Conta</h4>
       <p><strong>Número da Conta:</strong> {{ user.account.number }}</p>
       <p><strong>Número da Agência:</strong> {{ user.account.agency }}</p>
       <p><strong>Saldo:</strong> {{ user.account.balance | currency:'BRL' }}</p>
       <p><strong>Limite da Conta:</strong> {{ user.account.limit | currency:'BRL' }}</p>
       
-      <h4>Informações do Cartão</h4>
       <p><strong>Número do Cartão:</strong> {{ user.card.number }}</p>
       <p><strong>Limite do Cartão:</strong> {{ user.card.limit | currency:'BRL' }}</p>
 
