@@ -62,7 +62,7 @@
 
 .save-btn {
   padding: 10px 20px;
-  background-color: #dc3545;
+  background-color: #28a745;
   color: white;
   font-weight: bold;
   border: none;
@@ -73,12 +73,12 @@
 }
 
 .save-btn:hover:not(:disabled) {
-  background-color: #c82333;
+  background-color: #117e2a;;
   transform: translateY(-2px);
 }
 
 .save-btn:disabled {
-  background-color: #28a745;
+  background-color: #dc3545;
   cursor: not-allowed;
 }
 

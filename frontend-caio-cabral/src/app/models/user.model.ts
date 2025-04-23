@@ -1,5 +1,6 @@
 // Modelo para conta (account)
 export interface Account {
+  id?: number;
   number: string;
   agency: string;
   balance: number;
@@ -8,6 +9,7 @@ export interface Account {
 
 // Modelo para cartão (card)
 export interface Card {
+  id?: number;
   number: string;
   limit: number;
 }

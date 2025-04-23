@@ -60,12 +60,13 @@
         <button type="button" class="back-btn" (click)="goToMenu()">Menu Principal</button>
       </div>
 
-      <div *ngIf="successMessage" class="success-message">
-        {{ successMessage }}
-      </div>
-
       <div *ngIf="!user && searched" class="not-found">
         Usuário não encontrado!
       </div>
   </div>
+
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
 </div>
