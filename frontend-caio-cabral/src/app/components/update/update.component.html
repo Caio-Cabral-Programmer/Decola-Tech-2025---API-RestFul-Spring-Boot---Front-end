@@ -55,14 +55,18 @@
         </div>
       </form>
 
-      <div class="form-actions">
-        <button type="button" class="save-btn" [disabled]="!userForm.valid" (click)="onSubmit()">Atualizar e Salvar</button>
-        <button type="button" class="back-btn" (click)="goToMenu()">Menu Principal</button>
-      </div>
-
       <div *ngIf="!user && searched" class="not-found">
         Usuário não encontrado!
       </div>
+
+      <div class="form-actions">
+        
+        <button type="button" class="save-btn" [disabled]="!userForm.valid" (click)="onSubmit()">Atualizar e Salvar</button>
+
+        <button type="button" class="back-btn" (click)="goToMenu()">Menu Principal</button>
+      </div>
+
+
   </div>
 
   <div *ngIf="successMessage" class="success-message">

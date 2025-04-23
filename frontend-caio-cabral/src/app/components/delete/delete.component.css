@@ -162,6 +162,16 @@
   font-weight: bold;
 }
 
+.not-found {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .back-btn {
   display: block;
   margin: 30px auto 0;

@@ -14,7 +14,8 @@ import { User } from '../../models/user.model';
 })
 export class DeleteComponent implements OnInit {
   userId!: number;
-  user!: User;
+  user: User  | null = null;
+  searched: boolean = false;
   showConfirmation: boolean = false;
   successMessage: string = '';
 
@@ -36,6 +37,7 @@ export class DeleteComponent implements OnInit {
   searchUser(): void {
     if (this.userId) {
       this.loadUser();
+      this.searched = true;
     }
   }
 
@@ -43,10 +45,15 @@ export class DeleteComponent implements OnInit {
     this.apiService.getUser(this.userId).subscribe({
       next: (user: User) => {
         this.user = user;
+        console.log('Usuário carregado com sucesso!');
+
+
         this.showConfirmation = false;
       },
       error: (error: any) => {
-        console.error('Erro ao carregar usuário', error);
+        console.error('Erro ao carregar usuário!', error);
+        this.user = null;
+        this.searched = true;
       }
     });
   }

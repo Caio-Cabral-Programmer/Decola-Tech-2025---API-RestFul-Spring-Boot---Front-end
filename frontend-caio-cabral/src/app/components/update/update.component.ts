@@ -126,10 +126,11 @@ export class UpdateComponent implements OnInit {
       
       this.apiService.updateUser(this.userId, updatedUser).subscribe({
         next: (response) => {
-          this.successMessage = 'Usuário Atualizado com Sucesso!';
+          console.log('Usuário atualizado com aucesso', response);
+          this.successMessage = 'Usuário atualizado com sucesso!';
           setTimeout(() => {
-            this.successMessage = '';
-          }, 3000);
+            this.router.navigate(['/view-all']);
+          }, 2000);
         },
         error: (error) => {
           console.error('Erro ao atualizar usuário:', error);
