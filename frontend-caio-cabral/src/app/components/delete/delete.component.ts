@@ -18,6 +18,7 @@ export class DeleteComponent implements OnInit {
   searched: boolean = false;
   showConfirmation: boolean = false;
   successMessage: string = '';
+  errorMessage: string = '';  // Nova propriedade para mensagens de erro
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +39,9 @@ export class DeleteComponent implements OnInit {
     if (this.userId) {
       this.loadUser();
       this.searched = true;
+      // Limpa mensagens anteriores quando faz nova busca
+      this.errorMessage = '';
+      this.successMessage = '';
     }
   }
 
@@ -46,8 +50,6 @@ export class DeleteComponent implements OnInit {
       next: (user: User) => {
         this.user = user;
         console.log('Usuário carregado com sucesso!');
-
-
         this.showConfirmation = false;
       },
       error: (error: any) => {
@@ -59,6 +61,12 @@ export class DeleteComponent implements OnInit {
   }
 
   showDeleteConfirmation(): void {
+    // Verifica se o usuário tem ID 1 antes de mostrar a confirmação
+    if (this.userId === 1) {
+      this.errorMessage = 'O usuário com ID 1 não pode ser excluído! Os demais podem ser excluídos.';
+      return; // Sai da função sem mostrar a confirmação
+    }
+    
     this.showConfirmation = true;
   }
 
@@ -67,6 +75,13 @@ export class DeleteComponent implements OnInit {
   }
 
   confirmDelete(): void {
+    // Verificação adicional de segurança antes de excluir
+    if (this.userId === 1) {
+      this.errorMessage = 'O usuário com ID 1 não pode ser excluído! Os demais podem ser excluídos.';
+      this.showConfirmation = false;
+      return;
+    }
+    
     this.apiService.deleteUser(this.userId).subscribe({
       next: () => {
         console.log('Usuário excluído com sucesso');
@@ -75,10 +90,12 @@ export class DeleteComponent implements OnInit {
         this.showConfirmation = false;
         setTimeout(() => {
           this.router.navigate(['/view-all']);
-        }, 2000);
+        }, 3000);
       },
       error: (error: any) => {
         console.error('Erro ao excluir usuário', error);
+        this.errorMessage = 'Erro ao excluir usuário. Tente novamente mais tarde.';
+        this.showConfirmation = false;
       }
     });
   }

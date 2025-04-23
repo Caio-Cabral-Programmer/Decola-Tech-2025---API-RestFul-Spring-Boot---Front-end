@@ -59,6 +59,11 @@
         Usuário não encontrado!
       </div>
 
+      <!-- Nova seção para exibir mensagens de erro -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
       <div class="form-actions">
         
         <button type="button" class="save-btn" [disabled]="!userForm.valid" (click)="onSubmit()">Atualizar e Salvar</button>

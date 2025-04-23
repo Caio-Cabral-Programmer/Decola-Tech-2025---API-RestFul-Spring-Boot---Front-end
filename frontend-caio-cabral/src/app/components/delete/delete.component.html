@@ -29,12 +29,16 @@
       <button *ngIf="user && !showConfirmation" class="delete-btn" (click)="showDeleteConfirmation()">Deletar Usuário</button>
     </div>
 
-    <div *ngIf="successMessage" class="success-message">
-      {{ successMessage }}
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
 
-    <div *ngIf="!user && searched" class="not-found">
+    <div *ngIf="!user && searched && !successMessage" class="not-found">
       Usuário não encontrado!
+    </div>
+
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
     </div>
 
     <button class="back-btn" (click)="goToMenu()">Menu Principal</button>

@@ -21,6 +21,7 @@ export class UpdateComponent implements OnInit {
   user: User | null = null;
   userForm: FormGroup;
   successMessage: string = '';
+  errorMessage: string = '';  // Nova propriedade para mensagens de erro
   searched: boolean = false;
   accountId: number | null = null;  // Novo campo para armazenar o ID da conta
   cardId: number | null = null;     // Novo campo para armazenar o ID do cartão
@@ -57,6 +58,10 @@ export class UpdateComponent implements OnInit {
    */
   searchUser(): void {
     if (this.userId) {
+      // Limpa mensagens anteriores quando faz nova busca
+      this.errorMessage = '';
+      this.successMessage = '';
+      
       this.apiService.getUser(this.userId).subscribe({
         next: (user) => {
           this.user = user;
@@ -103,6 +108,12 @@ export class UpdateComponent implements OnInit {
    */
   onSubmit(): void {
     if (this.userForm.valid && this.userId) {
+      // Verifica se o usuário tem ID 1 antes de permitir a atualização
+      if (this.userId === 1) {
+        this.errorMessage = 'O usuário com ID 1 não pode ser atualizado! Os demais podem ser atualizados.';
+        return; // Sai da função sem fazer a atualização
+      }
+      
       const formValue = this.userForm.value;
       
       // Aqui abaixo estamos criando um objeto User com a estrutura correta com todos os IDs para que o JSON enviado para API contenha todos os IDs para que o update ocorra com sucesso. O formulário não inclue os IDs, por isso precisamos incluí-los manualmente.
@@ -126,7 +137,7 @@ export class UpdateComponent implements OnInit {
       
       this.apiService.updateUser(this.userId, updatedUser).subscribe({
         next: (response) => {
-          console.log('Usuário atualizado com aucesso', response);
+          console.log('Usuário atualizado com sucesso', response);
           this.successMessage = 'Usuário atualizado com sucesso!';
           setTimeout(() => {
             this.router.navigate(['/view-all']);
@@ -134,6 +145,21 @@ export class UpdateComponent implements OnInit {
         },
         error: (error) => {
           console.error('Erro ao atualizar usuário:', error);
+          
+          // Verifica o tipo de erro baseado na resposta da API
+          if (error.error && typeof error.error === 'string') {
+            // Verifica se a mensagem de erro contém informações sobre conta ou cartão duplicados
+            if (error.error.includes('conta') || error.error.toLowerCase().includes('account')) {
+              this.errorMessage = 'Número de conta já existe!';
+            } else if (error.error.includes('cartão') || error.error.toLowerCase().includes('card')) {
+              this.errorMessage = 'Número de cartão já existe!';
+            } else {
+              this.errorMessage = 'Erro ao atualizar usuário. Tente novamente mais tarde.';
+            }
+          } else {
+            // Tratamento genérico para outros tipos de erro
+            this.errorMessage = 'Erro ao atualizar usuário. Tente novamente mais tarde.';
+          }
         }
       });
     }

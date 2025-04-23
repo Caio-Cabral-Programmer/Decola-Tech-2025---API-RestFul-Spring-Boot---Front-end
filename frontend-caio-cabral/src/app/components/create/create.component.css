@@ -82,6 +82,17 @@
   cursor: not-allowed;
 }
 
+.error-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .back-btn {
   padding: 10px 20px;
   background-color: #f0f8ff;

@@ -20,6 +20,7 @@ import { User, Item } from '../../models/user.model';
 export class CreateComponent implements OnInit {
   userForm!: FormGroup;
   successMessage: string = '';
+  errorMessage: string = ''; // Nova propriedade para mensagens de erro
 
   constructor(
     private formBuilder: FormBuilder,
@@ -60,6 +61,10 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    // Limpa mensagens anteriores quando tenta enviar o formulário
+    this.errorMessage = '';
+    this.successMessage = '';
+    
     if (this.userForm.valid) {
       const user: User = this.userForm.value;
       this.apiService.createUser(user).subscribe({
@@ -72,6 +77,21 @@ export class CreateComponent implements OnInit {
         },
         error: (error) => {
           console.error('Erro ao criar usuário', error);
+          
+          // Verifica o tipo de erro baseado na resposta da API
+          if (error.error && typeof error.error === 'string') {
+            // Verifica se a mensagem de erro contém informações sobre conta ou cartão duplicados
+            if (error.error.includes('conta') || error.error.toLowerCase().includes('account')) {
+              this.errorMessage = 'Número de conta já existe!';
+            } else if (error.error.includes('cartão') || error.error.toLowerCase().includes('card')) {
+              this.errorMessage = 'Número de cartão já existe!';
+            } else {
+              this.errorMessage = 'Erro ao criar usuário. Tente novamente mais tarde.';
+            }
+          } else {
+            // Tratamento genérico para outros tipos de erro
+            this.errorMessage = 'Erro ao criar usuário. Tente novamente mais tarde.';
+          }
         }
       });
     } else {
