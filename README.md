@@ -15,7 +15,7 @@ Uma aplicação full-stack que permite:
 
 ### **Backend (Spring Boot)**  
 - **Java 17+**  
-- **Spring Boot 3.x** (Spring MVC, Spring Data JPA, Spring Validation)  
+- **Spring Boot 3.x** (Spring MVC, Spring Data JPA)  
 - **Banco de Dados**: H2 (para desenvolvimento) e PostgreSQL (para produção)  
 - **Documentação API**: Swagger/OpenAPI  
 
