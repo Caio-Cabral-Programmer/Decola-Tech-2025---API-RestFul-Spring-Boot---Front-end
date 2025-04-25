@@ -1,3 +1,5 @@
+/* FIXME: Seperar modelos por arquivo */
+
 // Modelo para conta (account)
 export interface Account {
   id?: number;

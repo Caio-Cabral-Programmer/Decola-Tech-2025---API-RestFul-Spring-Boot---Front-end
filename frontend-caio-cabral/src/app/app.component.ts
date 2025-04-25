@@ -14,7 +14,7 @@ import { filter } from 'rxjs/operators';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    MenuComponent
+    MenuComponent /* FIXME: Verificar esse aviso de not use. */
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

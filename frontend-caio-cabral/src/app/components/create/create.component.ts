@@ -1,3 +1,5 @@
+/* FIXME: Colocar todos os components que são páginas em uma pasta com nome pages. */
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -64,7 +66,7 @@ export class CreateComponent implements OnInit {
     // Limpa mensagens anteriores quando tenta enviar o formulário
     this.errorMessage = '';
     this.successMessage = '';
-    
+
     if (this.userForm.valid) {
       const user: User = this.userForm.value;
       this.apiService.createUser(user).subscribe({
@@ -77,7 +79,7 @@ export class CreateComponent implements OnInit {
         },
         error: (error) => {
           console.error('Erro ao criar usuário', error);
-          
+
           // Verifica o tipo de erro baseado na resposta da API
           if (error.error && typeof error.error === 'string') {
             // Verifica se a mensagem de erro contém informações sobre conta ou cartão duplicados
@@ -146,4 +148,3 @@ export class CreateComponent implements OnInit {
 */
 
 }
-
