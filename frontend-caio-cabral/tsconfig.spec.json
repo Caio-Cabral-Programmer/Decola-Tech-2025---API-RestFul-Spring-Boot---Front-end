@@ -1,14 +1,19 @@
 /* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+
+/* O arquivo tsconfig.spec.json é como um livro de regras especial para os testes do seu projeto Angular. Ele diz ao TypeScript como ele deve se comportar quando você estiver escrevendo e executando testes para o seu aplicativo. */
+
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./out-tsc/spec",
+  "extends": "./tsconfig.json", /* Esta parte é como uma lista de instruções especiais para o compilador do TypeScript (o programa que transforma seu código TypeScript em código que o navegador entende): */
+  "compilerOptions": { /* Esta parte é como uma lista de instruções especiais para o compilador do TypeScript (o programa que transforma seu código TypeScript em código que o navegador entende): */
+    "outDir": "./out-tsc/spec", /* É como dizer "guarde todos os arquivos de teste compilados nesta pastinha especial chamada 'out-tsc/spec'". É como ter uma gaveta separada só para guardar seus desenhos de teste! */
     "types": [
-      "jasmine"
+      "jasmine" /* Isto diz ao TypeScript: "Ei, vamos usar o Jasmine para fazer testes!". Jasmine é como um ajudante especial que sabe como verificar se seu código está funcionando corretamente. */
     ]
   },
-  "include": [
+  "include": [ /* Esta parte diz quais arquivos devem seguir estas regras especiais:
+
+  -  */
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
   ]

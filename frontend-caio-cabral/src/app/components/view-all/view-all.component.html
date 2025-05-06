@@ -1,51 +1,51 @@
-<div class="view-all-container">
-  <h2 class="view-all-title">Visualizar Todos</h2>
-  <div class="view-all-form">
-      <div *ngIf="loading" class="loading">
-        Carregando usuários...
+<div class="view-all-container">  <!-- Container principal que envolve toda a página, como uma moldura de um quadro -->
+  <h2 class="view-all-title">Visualizar Todos</h2>  <!-- Título da página, como o nome do álbum de figurinhas -->
+  <div class="view-all-form">  <!-- Container secundário que envolve o conteúdo principal -->
+      <div *ngIf="loading" class="loading">  <!-- Mensagem de carregamento que só aparece quando loading é true -->
+        Carregando usuários...  <!-- Texto que informa ao usuário que os dados estão sendo carregados -->
       </div>
 
-      <div *ngIf="users.length > 0" class="users-list">
-        <div *ngFor="let user of users" class="user-card">
-          <div class="user-header">
-            <h3>{{ user.name }}</h3>
-            <span class="user-id">ID: {{ user.id }}</span>
+      <div *ngIf="users.length > 0" class="users-list">  <!-- Lista de usuários que só aparece quando há pelo menos um usuário -->
+        <div *ngFor="let user of users" class="user-card">  <!-- Para cada usuário na lista, cria um cartão -->
+          <div class="user-header">  <!-- Cabeçalho do cartão do usuário -->
+            <h3>{{ user.name }}</h3>  <!-- Nome do usuário em destaque -->
+            <span class="user-id">ID: {{ user.id }}</span>  <!-- ID do usuário em texto menor -->
           </div>
 
-          <div class="user-details">
-            <div class="detail-row">
-              <span class="detail-label">Conta | Agência:</span>
-              <span class="detail-value">{{ user.account.number }} | {{ user.account.agency }}</span>
+          <div class="user-details">  <!-- Seção de detalhes do usuário -->
+            <div class="detail-row">  <!-- Linha de detalhe para conta e agência -->
+              <span class="detail-label">Conta | Agência:</span>  <!-- Rótulo do detalhe -->
+              <span class="detail-value">{{ user.account.number }} | {{ user.account.agency }}</span>  <!-- Valor do detalhe -->
             </div>
 
-            <div class="detail-row">
-              <span class="detail-label">Saldo:</span>
-              <span class="detail-value">{{ user.account.balance | currency:'BRL' }}</span>
+            <div class="detail-row">  <!-- Linha de detalhe para saldo -->
+              <span class="detail-label">Saldo:</span>  <!-- Rótulo do detalhe -->
+              <span class="detail-value">{{ user.account.balance | currency:'BRL' }}</span>  <!-- Valor do detalhe formatado como moeda brasileira -->
             </div>
 
-            <div class="detail-row">
-              <span class="detail-label">Limite da Conta:</span>
-              <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>
+            <div class="detail-row">  <!-- Linha de detalhe para limite da conta -->
+              <span class="detail-label">Limite da Conta:</span>  <!-- Rótulo do detalhe -->
+              <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>  <!-- Valor do detalhe formatado como moeda brasileira -->
             </div>
 
-            <div class="detail-row">
-              <span class="detail-label">Cartão:</span>
-              <span class="detail-value">{{ user.card.number }}</span>
+            <div class="detail-row">  <!-- Linha de detalhe para número do cartão -->
+              <span class="detail-label">Cartão:</span>  <!-- Rótulo do detalhe -->
+              <span class="detail-value">{{ user.card.number }}</span>  <!-- Valor do detalhe -->
             </div>
 
-            <div class="detail-row">
-              <span class="detail-label">Limite do Cartão:</span>
-              <span class="detail-value">{{ user.card.limit | currency:'BRL' }}</span>
+            <div class="detail-row">  <!-- Linha de detalhe para limite do cartão -->
+              <span class="detail-label">Limite do Cartão:</span>  <!-- Rótulo do detalhe -->
+              <span class="detail-value">{{ user.card.limit | currency:'BRL' }}</span>  <!-- Valor do detalhe formatado como moeda brasileira -->
             </div>
             
           </div>
         </div>
       </div>
 
-      <div *ngIf="users.length === 0 && !loading" class="no-users">
-        Nenhum usuário cadastrado.
+      <div *ngIf="users.length === 0 && !loading" class="no-users">  <!-- Mensagem que aparece quando não há usuários e não está carregando -->
+        Nenhum usuário cadastrado.  <!-- Texto informando que não há usuários cadastrados -->
       </div>
 
-      <button class="back-btn" (click)="goToMenu()">Menu Principal</button>
+      <button class="back-btn" (click)="goToMenu()">Menu Principal</button>  <!-- Botão para voltar ao menu principal, chama o método goToMenu() quando clicado -->
   </div>  
 </div>

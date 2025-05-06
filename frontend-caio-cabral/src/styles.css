@@ -1,27 +1,36 @@
-/* Estilos globais */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Estilos globais */  /* Este comentário indica que os estilos abaixo se aplicam a todo o site */
+* {  /* O seletor asterisco seleciona TODOS os elementos HTML da página, como uma varinha mágica que toca em tudo! */
+  margin: 0;  /* Remove todas as margens externas dos elementos, como tirar o espaço em branco ao redor de uma figura */
+  padding: 0;  /* Remove todos os preenchimentos internos, como tirar o acolchoado de dentro de uma caixa */
+  box-sizing: border-box;  /* Faz com que largura e altura incluam padding e borda, não apenas o conteúdo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* Define a fonte para todos os textos, com alternativas caso a primeira não esteja disponível */
 }
 
-body {
-  background-color: #f8f9fa;
-  color: #212529;
-  padding-top: 300px; /* Igual à altura do header */
-  padding-bottom: 100px; /* Espaço para o footer */
+body {  /* Este seletor aplica estilos ao corpo inteiro da página, como pintar toda a tela de um caderno */
+  background-color: #f8f9fa;  /* Define a cor de fundo como um cinza bem clarinho, quase branco */
+  color: #212529;  /* Define a cor do texto como um cinza escuro, quase preto, para bom contraste */
+  padding-top: 300px; /* Igual à altura do header */  /* Adiciona espaço no topo para o cabeçalho fixo não cobrir o conteúdo */
+  padding-bottom: 100px; /* Espaço para o footer */  /* Adiciona espaço embaixo para o rodapé não cobrir o conteúdo */
 }
 
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: inherit;
+button, input, select, textarea {  /* Este seletor aplica estilos a todos os elementos de formulário, como botões e caixas de texto */
+  font-family: inherit;  /* Faz com que esses elementos usem a mesma fonte do elemento pai, mantendo consistência */
+  font-size: inherit;  /* Faz com que esses elementos usem o mesmo tamanho de fonte do elemento pai */
 }
 
-/* Classes utilitárias */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}/* You can add global styles to this file, and also import other style files */
+/* Classes utilitárias */  /* Este comentário indica que os estilos abaixo são classes que podem ser reutilizadas em vários lugares */
+.container {  /* Esta classe é usada para centralizar e limitar a largura do conteúdo, como uma moldura para seu desenho */
+  width: 100%;  /* Faz o container ocupar toda a largura disponível do elemento pai */
+  max-width: 1200px;  /* Limita a largura máxima para que o conteúdo não fique muito esticado em telas grandes */
+  margin: 0 auto;  /* Centraliza o container horizontalmente (0 para cima e baixo, auto para esquerda e direita) */
+  padding: 0 15px;  /* Adiciona um pequeno espaço nas laterais do container para o conteúdo não ficar colado nas bordas */
+}/* You can add global styles to this file, and also import other style files */  /* Lembra que você pode adicionar mais estilos globais ou importar outros arquivos CSS */
+
+
+/* Este arquivo é super importante porque:
+
+1. Consistência Visual : Ele garante que todo o seu site tenha uma aparência consistente, usando as mesmas fontes, cores e espaçamentos.
+2. Reset de Estilos : Ele remove os estilos padrão dos navegadores, que podem variar, garantindo que seu site pareça o mesmo em diferentes navegadores.
+3. Responsividade : Com configurações como max-width e width: 100% , ele ajuda seu site a se adaptar a diferentes tamanhos de tela.
+4. Organização : Ele separa os estilos globais (que se aplicam a todo o site) dos estilos específicos de componentes.
+5. Eficiência : Definir estilos globais evita repetição de código, pois você não precisa redefinir as mesmas propriedades em cada componente. */

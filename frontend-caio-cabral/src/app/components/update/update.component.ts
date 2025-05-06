@@ -91,6 +91,7 @@ export class UpdateComponent implements OnInit {
           };
           
           this.userForm.patchValue(formattedUser);
+
           this.searched = true;
         },
         error: (error) => {

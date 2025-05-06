@@ -1,15 +1,23 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */ // Link para aprender mais sobre configurações do TypeScript
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */ // Link para aprender mais sobre opções do compilador Angular
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./out-tsc/app",
-    "types": []
+  "extends": "./tsconfig.json", // Herda todas as configurações do arquivo tsconfig.json principal, como um filho que herda características dos pais
+  "compilerOptions": { // Opções específicas para o compilador do TypeScript para este aplicativo
+    "outDir": "./out-tsc/app", // Define onde os arquivos compilados do aplicativo serão armazenados, como uma pastinha especial só para seu app
+    "types": [] // Lista vazia significa que não serão incluídos tipos adicionais além dos padrão, como uma caixa de lápis sem cores extras
   },
-  "files": [
-    "src/main.ts"
+  "files": [ // Lista específica de arquivos que devem ser incluídos na compilação
+    "src/main.ts" // Inclui apenas o arquivo principal do aplicativo, que é como a porta de entrada do seu app
   ],
-  "include": [
-    "src/**/*.d.ts"
+  "include": [ // Padrões de arquivos que devem ser incluídos na compilação
+    "src/**/*.d.ts" // Inclui todos os arquivos de definição de tipos (.d.ts) em qualquer pasta dentro de src, como um mapa de todos os brinquedos disponíveis
   ]
 }
+
+/*  Este arquivo tsconfig.app.json é super importante porque:
+
+1. É específico para o aplicativo : Enquanto o tsconfig.json tem configurações gerais, este arquivo tem configurações específicas para o código do seu aplicativo.
+2. Define o ponto de entrada : Ele especifica que src/main.ts é o arquivo principal, que é como a primeira página do seu livro de histórias!
+3. Organiza a compilação : Ele diz ao TypeScript exatamente onde colocar os arquivos compilados e quais arquivos incluir.
+4. Economiza espaço : Ao incluir apenas os arquivos necessários para o aplicativo, ele torna a compilação mais rápida e eficiente.
+5. Separa preocupações : Mantém as configurações do aplicativo separadas das configurações de teste, o que ajuda a manter tudo organizado.*/

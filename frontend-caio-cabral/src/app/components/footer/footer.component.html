@@ -1,11 +1,21 @@
-<footer>
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/caio-cabral-programmer/" target="_blank" class="social-btn linkedin">LinkedIn</a>
-    <a href="https://github.com/Caio-Cabral-Programmer" target="_blank" class="social-btn github">GitHub</a>
-    <a href="https://www.notion.so/Java-1c990d83bc33814c9659f977de346a2a" target="_blank" class="social-btn notion">Notion (My Java Study Board)</a>
-    <button class="social-btn email" (click)="copyEmail()">Email</button>
-  </div>
-  <div class="signature">
-    <p>by Caio Cabral → TypeScript | Angular & Java | Spring Boot | Spring Data JPA | H2/PostgreSQL</p>
-  </div>
-</footer>
+<footer>                                                           <!-- Define o elemento de rodapé da página, que aparece na parte inferior -->
+  <div class="social-links">                                       <!-- Cria um contêiner para os links de redes sociais com uma classe para estilização -->
+    <a href="https://www.linkedin.com/in/caio-cabral-programmer/" target="_blank" class="social-btn linkedin">LinkedIn</a>          <!-- Link para o perfil do LinkedIn que abre em nova aba, com classes para estilização -->
+    <a href="https://github.com/Caio-Cabral-Programmer" target="_blank" class="social-btn github">GitHub</a>                        <!-- Link para o perfil do GitHub que abre em nova aba, com classes para estilização -->
+    <a href="https://www.notion.so/Java-1c990d83bc33814c9659f977de346a2a" target="_blank" class="social-btn notion">Notion (My Java Study Board)</a>  <!-- Link para o quadro de estudos Java no Notion que abre em nova aba -->
+    <button class="social-btn email" (click)="copyEmail()">Email</button>                                                           <!-- Botão que chama o método copyEmail() quando clicado para copiar o email -->
+  </div>                                                           <!-- Fecha o contêiner de links sociais -->
+  <div class="signature">                                          <!-- Cria um contêiner para a assinatura do desenvolvedor com uma classe para estilização -->
+    <p>by Caio Cabral → TypeScript & Angular | Java & Spring Boot | Spring Data JPA & H2/PostgreSQL</p>                             <!-- Parágrafo com a assinatura e as tecnologias que o desenvolvedor domina -->
+  </div>                                                           <!-- Fecha o contêiner da assinatura -->
+</footer>                                                          <!-- Fecha o elemento de rodapé -->
+
+
+<!-- Este arquivo é super importante porque:
+
+1. Cria o rodapé do aplicativo : Ele define a estrutura HTML do rodapé que aparece na parte inferior de todas as páginas do seu aplicativo. É como a última página de um livro que contém informações sobre o autor!
+2. Fornece links de contato e redes sociais : Ele permite que os usuários acessem facilmente o LinkedIn, GitHub e Notion do desenvolvedor, além de copiar o email para contato. É como um cartão de visitas digital com vários meios de comunicação!
+3. Melhora a experiência do usuário : Os links abrem em novas abas ( target="_blank" ) para que o usuário não perca a navegação no aplicativo. É como abrir uma janela nova sem fechar a que você já estava usando!
+4. Usa recursos do Angular : Ele usa o event binding (click)="copyEmail()" para chamar o método definido no componente TypeScript quando o botão de email é clicado. É como um controle remoto que aciona uma função específica!
+5. Mostra as habilidades do desenvolvedor : A assinatura lista as tecnologias que o desenvolvedor domina, como TypeScript, Angular, Java, Spring Boot e bancos de dados. É como um pequeno currículo que mostra as habilidades do autor!
+6. Usa classes CSS para estilização : Cada elemento tem classes específicas ( social-links , social-btn , linkedin , github , notion , email , signature ) que permitem estilizá-los no arquivo CSS correspondente. É como ter etiquetas coloridas para organizar e decorar cada parte! -->

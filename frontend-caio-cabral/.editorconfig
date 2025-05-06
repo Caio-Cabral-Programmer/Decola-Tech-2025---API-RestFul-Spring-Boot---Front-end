@@ -1,17 +1,25 @@
-# Editor configuration, see https://editorconfig.org
-root = true
+# Editor configuration, see https://editorconfig.org  # Comentário explicando que este é um arquivo de configuração do EditorConfig com link para documentação
+root = true  # Define que este é o arquivo de configuração principal e não deve procurar outros arquivos .editorconfig em pastas acima
 
-[*]
-charset = utf-8
-indent_style = space
-indent_size = 2
-insert_final_newline = true
-trim_trailing_whitespace = true
+[*]  # Esta seção define configurações que se aplicam a todos os tipos de arquivos
+charset = utf-8  # Define que todos os arquivos devem usar o conjunto de caracteres UTF-8, que suporta letras de diferentes idiomas
+indent_style = space  # Define que a indentação deve ser feita com espaços, não com tabs
+indent_size = 2  # Define que cada nível de indentação deve ter 2 espaços
+insert_final_newline = true  # Adiciona uma linha vazia no final de cada arquivo, como uma boa prática de programação
+trim_trailing_whitespace = true  # Remove espaços extras no final das linhas, mantendo o código limpo
 
-[*.ts]
-quote_type = single
-ij_typescript_use_double_quotes = false
+[*.ts]  # Esta seção define configurações específicas para arquivos TypeScript (que terminam com .ts)
+quote_type = single  # Define que aspas simples ('') devem ser usadas para strings em arquivos TypeScript
+ij_typescript_use_double_quotes = false  # Configuração específica para o IntelliJ IDEA/WebStorm que também diz para não usar aspas duplas
 
-[*.md]
-max_line_length = off
-trim_trailing_whitespace = false
+[*.md]  # Esta seção define configurações específicas para arquivos Markdown (que terminam com .md)
+max_line_length = off  # Desativa o limite de comprimento de linha para arquivos Markdown, permitindo linhas mais longas
+trim_trailing_whitespace = false  # Não remove espaços extras no final das linhas em Markdown, pois dois espaços significam quebra de linha
+
+# Este arquivo é super importante porque:
+
+# 1. Consistência : Ele garante que todos os arquivos do seu projeto Angular sigam o mesmo estilo de formatação, não importa quem esteja escrevendo o código.
+# 2. Colaboração : Quando várias pessoas trabalham no mesmo projeto, o .editorconfig garante que todos sigam as mesmas regras de formatação.
+# 3. Limpeza de Código : Ele ajuda a manter seu código limpo e organizado, removendo espaços desnecessários e garantindo indentação consistente.
+# 4. Compatibilidade entre Editores : Mesmo que diferentes pessoas usem editores diferentes (como VS Code, WebStorm, Sublime Text), o .editorconfig garante que o código seja formatado da mesma maneira.
+# 5. Redução de Conflitos : Reduz conflitos em sistemas de controle de versão (como Git) que podem acontecer quando pessoas diferentes usam estilos de formatação diferentes.  

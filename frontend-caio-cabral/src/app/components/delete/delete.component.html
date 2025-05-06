@@ -1,47 +1,55 @@
-<div class="delete-container">
-  <h2 class="delete-title">Deletar</h2>
-  <div class="delete-form">
-    <div class="search-id">
-      <label for="userId">ID do Usuário:</label>
-      <input type="number" id="userId" [(ngModel)]="userId" (keyup.enter)="searchUser()">
-      <button class="search-btn" (click)="searchUser()">Buscar</button>
-    </div>
+<div class="delete-container">                                      <!-- Contêiner principal que envolve todo o conteúdo da página de exclusão -->
+  <h2 class="delete-title">Deletar</h2>                             <!-- Título principal da página com uma classe para estilização -->
+  <div class="delete-form">                                         <!-- Contêiner para o formulário de exclusão com uma classe para estilização -->
+    <div class="search-id">                                         <!-- Seção para buscar usuário pelo ID com uma classe para estilização -->
+      <label for="userId">ID do Usuário:</label>                    <!-- Rótulo para o campo de entrada do ID do usuário -->
+      <input type="number" id="userId" [(ngModel)]="userId" (keyup.enter)="searchUser()">  <!-- Campo de entrada para o ID com two-way binding e evento de tecla Enter -->
+      <button class="search-btn" (click)="searchUser()">Buscar</button>  <!-- Botão que chama o método searchUser() quando clicado -->
+    </div>                                                          <!-- Fecha a seção de busca por ID -->
 
-    <div *ngIf="user" class="user-details">
-      <h3>Detalhes do Usuário</h3>
-      <p><strong>Nome:</strong> {{ user.name }}</p>
+    <div *ngIf="user" class="user-details">                         <!-- Seção que mostra detalhes do usuário, visível apenas se user existir -->
+      <h3>Detalhes do Usuário</h3>                                  <!-- Subtítulo para a seção de detalhes do usuário -->
+      <p><strong>Nome:</strong> {{ user.name }}</p>                 <!-- Parágrafo que mostra o nome do usuário usando interpolação -->
       
-      <p><strong>Número da Conta:</strong> {{ user.account.number }}</p>
-      <p><strong>Número da Agência:</strong> {{ user.account.agency }}</p>
-      <p><strong>Saldo:</strong> {{ user.account.balance | currency:'BRL' }}</p>
-      <p><strong>Limite da Conta:</strong> {{ user.account.limit | currency:'BRL' }}</p>
+      <p><strong>Número da Conta:</strong> {{ user.account.number }}</p>  <!-- Parágrafo que mostra o número da conta do usuário -->
+      <p><strong>Número da Agência:</strong> {{ user.account.agency }}</p>  <!-- Parágrafo que mostra o número da agência do usuário -->
+      <p><strong>Saldo:</strong> {{ user.account.balance | currency:'BRL' }}</p>  <!-- Parágrafo que mostra o saldo formatado como moeda brasileira -->
+      <p><strong>Limite da Conta:</strong> {{ user.account.limit | currency:'BRL' }}</p>  <!-- Parágrafo que mostra o limite da conta formatado como moeda -->
       
-      <p><strong>Número do Cartão:</strong> {{ user.card.number }}</p>
-      <p><strong>Limite do Cartão:</strong> {{ user.card.limit | currency:'BRL' }}</p>
+      <p><strong>Número do Cartão:</strong> {{ user.card.number }}</p>  <!-- Parágrafo que mostra o número do cartão do usuário -->
+      <p><strong>Limite do Cartão:</strong> {{ user.card.limit | currency:'BRL' }}</p>  <!-- Parágrafo que mostra o limite do cartão formatado como moeda -->
 
-      <div *ngIf="showConfirmation" class="confirmation">
-        <div class="confirmation-message">Deseja realmente deletar?</div>
-        <div class="confirmation-buttons">
-          <button class="confirm-btn" (click)="confirmDelete()">Sim</button>
-          <button class="cancel-btn" (click)="cancelDelete()">Não</button>
-        </div>
-      </div>
-      <button *ngIf="user && !showConfirmation" class="delete-btn" (click)="showDeleteConfirmation()">Deletar Usuário</button>
-    </div>
+      <div *ngIf="showConfirmation" class="confirmation">           <!-- Seção de confirmação, visível apenas se showConfirmation for verdadeiro -->
+        <div class="confirmation-message">Deseja realmente deletar?</div>  <!-- Mensagem perguntando se o usuário realmente deseja excluir -->
+        <div class="confirmation-buttons">                          <!-- Contêiner para os botões de confirmação -->
+          <button class="confirm-btn" (click)="confirmDelete()">Sim</button>  <!-- Botão que chama confirmDelete() quando clicado para confirmar exclusão -->
+          <button class="cancel-btn" (click)="cancelDelete()">Não</button>  <!-- Botão que chama cancelDelete() quando clicado para cancelar exclusão -->
+        </div>                                                      <!-- Fecha o contêiner dos botões de confirmação -->
+      </div>                                                        <!-- Fecha a seção de confirmação -->
+      <button *ngIf="user && !showConfirmation" class="delete-btn" (click)="showDeleteConfirmation()">Deletar Usuário</button>  <!-- Botão de exclusão, visível se user existir e showConfirmation for falso -->
+    </div>                                                          <!-- Fecha a seção de detalhes do usuário -->
 
-    <div *ngIf="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
+    <div *ngIf="errorMessage" class="error-message">               <!-- Seção para mensagens de erro, visível apenas se errorMessage existir -->
+      {{ errorMessage }}                                            <!-- Mostra a mensagem de erro usando interpolação -->
+    </div>                                                          <!-- Fecha a seção de mensagem de erro -->
 
-    <div *ngIf="!user && searched && !successMessage" class="not-found">
-      Usuário não encontrado!
-    </div>
+    <div *ngIf="!user && searched && !successMessage" class="not-found">  <!-- Seção para usuário não encontrado, visível em condições específicas -->
+      Usuário não encontrado!                                       <!-- Mensagem informando que o usuário não foi encontrado -->
+    </div>                                                          <!-- Fecha a seção de usuário não encontrado -->
 
-    <div *ngIf="successMessage" class="success-message">
-      {{ successMessage }}
-    </div>
+    <div *ngIf="successMessage" class="success-message">           <!-- Seção para mensagens de sucesso, visível apenas se successMessage existir -->
+      {{ successMessage }}                                          <!-- Mostra a mensagem de sucesso usando interpolação -->
+    </div>                                                          <!-- Fecha a seção de mensagem de sucesso -->
 
-    <button class="back-btn" (click)="goToMenu()">Menu Principal</button>
+    <button class="back-btn" (click)="goToMenu()">Menu Principal</button>  <!-- Botão que chama goToMenu() quando clicado para voltar ao menu principal -->
 
-  </div>
-</div>
+  </div>                                                            <!-- Fecha o contêiner do formulário de exclusão -->
+</div>                                                              <!-- Fecha o contêiner principal -->
+
+<!-- Ele usa vários recursos poderosos do Angular, como:
+
+- Diretivas estruturais ( *ngIf ): Para mostrar ou esconder elementos com base em condições
+- Interpolação ( {{ }} ): Para mostrar valores das variáveis do componente
+- Event binding ( (click) , (keyup.enter) ): Para chamar métodos quando eventos acontecem
+- Two-way binding ( [(ngModel)] ): Para sincronizar o valor do input com a variável do componente
+- Pipes ( currency:'BRL' ): Para formatar valores como moeda brasileira -->

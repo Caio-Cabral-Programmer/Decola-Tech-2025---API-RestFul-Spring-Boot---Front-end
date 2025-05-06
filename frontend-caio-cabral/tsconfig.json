@@ -1,27 +1,30 @@
 /* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
+  // Determina se o TypeScript deve compilar automaticamente quando um arquivo é salvo
+  // false: Você precisa usar comandos como ng serve ou ng build para compilar
   "compileOnSave": false,
-  "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "bundler",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022"
+  "compilerOptions": {   // Opções para o compilador TypeScript - esta é a seção principal de configurações
+    "outDir": "./dist/out-tsc",   // Define onde os arquivos compilados serão armazenados
+    "strict": true,     // Ativa o modo estrito do TypeScript, que ajuda a evitar erros comuns. É como ter um professor rigoroso verificando seu trabalho!
+    "noImplicitOverride": true,    // Exige que você use a palavra-chave 'override' quando sobrescrever métodos. É como levantar a mão antes de falar na sala de aula
+    "noPropertyAccessFromIndexSignature": true,     // Impede o acesso a propriedades usando notação de colchetes sem declaração explícita. É como dizer que você só pode pegar um brinquedo se souber o nome dele
+    "noImplicitReturns": true,    // Exige que todas as funções retornem algo explicitamente em todos os caminhos possíveis. É como sempre dizer "tchau" antes de sair de uma sala
+    "noFallthroughCasesInSwitch": true,    // Exige que cada caso em um switch termine com break ou return. É como fechar a porta depois de sair de um cômodo
+    "skipLibCheck": true,    // Pula a verificação de tipos em arquivos de definição de bibliotecas. Isso torna a compilação mais rápida
+    "isolatedModules": true,    // Trata cada arquivo como um módulo separado. É como ter cada página do caderno como um desenho diferente
+    "esModuleInterop": true,    // Facilita a importação de módulos de diferentes formatos    // É como ter um adaptador universal para conectar diferentes tipos de brinquedos
+    "experimentalDecorators": true,    // Permite o uso de decoradores, que são muito usados no Angular    // É como permitir usar adesivos especiais nos seus desenhos
+    "moduleResolution": "bundler",    // Define como o TypeScript encontra os módulos que você importa    // "bundler" é o método mais moderno para projetos Angular
+    "importHelpers": true,    // Usa funções auxiliares compartilhadas para reduzir o tamanho do código    // É como usar ferramentas compartilhadas na sala de arte
+    "target": "ES2022",    // Define para qual versão do JavaScript seu código será compilado    // ES2022 é uma versão moderna que funciona em navegadores atuais
+    "module": "ES2022"    // Define qual sistema de módulos será usado no código compilado    // ES2022 usa o sistema de módulos mais moderno
   },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+  "angularCompilerOptions": {  // Opções específicas para o compilador do Angular  // É como uma caixa de ferramentas especial só para o Angular
+    "enableI18nLegacyMessageIdFormat": false,    // Desativa o formato antigo de IDs para mensagens de internacionalização    // Usa o formato mais moderno para traduções
+    "strictInjectionParameters": true,    // Verifica rigorosamente os parâmetros de injeção de dependência    // Ajuda a evitar erros com serviços e componentes
+    "strictInputAccessModifiers": true,    // Respeita os modificadores de acesso para inputs de componentes    // Garante que as propriedades sejam usadas corretamente
+    "strictTemplates": true    // Verifica rigorosamente os tipos nos templates HTML    // Ajuda a encontrar erros antes mesmo de executar o código
+
   }
 }

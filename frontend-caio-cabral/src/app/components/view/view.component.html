@@ -1,53 +1,53 @@
-<div class="view-container">
-    <h2 class="view-title">Visualizar</h2>
-    <div class="view-form">
-          <div class="search-id">
-            <label for="userId">ID do Usuário:</label>
-            <input type="number" id="userId" [(ngModel)]="userId">
-            <button class="search-btn" (click)="searchUser()">Buscar</button>
+<div class="view-container">  <!-- Container principal que envolve toda a página, como uma moldura de um quadro -->
+    <h2 class="view-title">Visualizar</h2>  <!-- Título da página, como o nome da ficha que você está olhando -->
+    <div class="view-form">  <!-- Container secundário que envolve o conteúdo principal -->
+          <div class="search-id">  <!-- Seção para buscar um usuário pelo ID -->
+            <label for="userId">ID do Usuário:</label>  <!-- Rótulo para o campo de entrada do ID -->
+            <input type="number" id="userId" [(ngModel)]="userId">  <!-- Campo de entrada para o ID do usuário, com ligação bidirecional -->
+            <button class="search-btn" (click)="searchUser()">Buscar</button>  <!-- Botão que chama o método searchUser() quando clicado -->
           </div>
         
-      <div *ngIf="user" class="user-details">
-        <div class="detail-row">
-          <span class="detail-label">Nome:</span>
-          <span class="detail-value">{{ user.name }}</span>
+      <div *ngIf="user" class="user-details">  <!-- Seção de detalhes do usuário que só aparece quando um usuário é encontrado -->
+        <div class="detail-row">  <!-- Linha de detalhe para o nome -->
+          <span class="detail-label">Nome:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.name }}</span>  <!-- Valor do detalhe (nome do usuário) -->
         </div>
 
-        <div class="detail-row">
-          <span class="detail-label">Número da Conta:</span>
-          <span class="detail-value">{{ user.account.number }}</span>
+        <div class="detail-row">  <!-- Linha de detalhe para o número da conta -->
+          <span class="detail-label">Número da Conta:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.account.number }}</span>  <!-- Valor do detalhe (número da conta) -->
         </div>
 
-        <div class="detail-row">
-          <span class="detail-label">Número da Agência:</span>
-          <span class="detail-value">{{ user.account.agency }}</span>
+        <div class="detail-row">  <!-- Linha de detalhe para o número da agência -->
+          <span class="detail-label">Número da Agência:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.account.agency }}</span>  <!-- Valor do detalhe (número da agência) -->
         </div>
 
-        <div class="detail-row">
-          <span class="detail-label">Saldo:</span>
-          <span class="detail-value">{{ user.account.balance | currency:'BRL' }}</span>
+        <div class="detail-row">  <!-- Linha de detalhe para o saldo -->
+          <span class="detail-label">Saldo:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.account.balance | currency:'BRL' }}</span>  <!-- Valor do detalhe (saldo) formatado como moeda brasileira -->
         </div>
 
-        <div class="detail-row">
-          <span class="detail-label">Limite da Conta:</span>
-          <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>
+        <div class="detail-row">  <!-- Linha de detalhe para o limite da conta -->
+          <span class="detail-label">Limite da Conta:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.account.limit | currency:'BRL' }}</span>  <!-- Valor do detalhe (limite da conta) formatado como moeda brasileira -->
         </div>
 
-        <div class="detail-row">
-          <span class="detail-label">Número do Cartão:</span>
-          <span class="detail-value">{{ user.card.number }}</span>
+        <div class="detail-row">  <!-- Linha de detalhe para o número do cartão -->
+          <span class="detail-label">Número do Cartão:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.card.number }}</span>  <!-- Valor do detalhe (número do cartão) -->
         </div>
 
-        <div class="detail-row">
-          <span class="detail-label">Limite do Cartão:</span>
-          <span class="detail-value">{{ user.card.limit | currency:'BRL' }}</span>
+        <div class="detail-row">  <!-- Linha de detalhe para o limite do cartão -->
+          <span class="detail-label">Limite do Cartão:</span>  <!-- Rótulo do detalhe -->
+          <span class="detail-value">{{ user.card.limit | currency:'BRL' }}</span>  <!-- Valor do detalhe (limite do cartão) formatado como moeda brasileira -->
         </div>
       </div>
 
-      <div *ngIf="!user && searched" class="not-found">
-        Usuário não encontrado!
+      <div *ngIf="!user && searched" class="not-found">  <!-- Mensagem que aparece quando nenhum usuário é encontrado e uma busca foi realizada -->
+        Usuário não encontrado!  <!-- Texto informando que o usuário não foi encontrado -->
       </div>
 
-      <button class="back-btn" (click)="goToMenu()">Menu Principal</button>
+      <button class="back-btn" (click)="goToMenu()">Menu Principal</button>  <!-- Botão para voltar ao menu principal, chama o método goToMenu() quando clicado -->
     </div>
 </div>

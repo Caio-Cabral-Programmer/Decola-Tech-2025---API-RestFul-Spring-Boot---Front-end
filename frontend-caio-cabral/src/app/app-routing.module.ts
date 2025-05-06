@@ -43,8 +43,20 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+@NgModule({   // @NgModule é um decorador que marca esta classe como um módulo Angular
+  imports: [RouterModule.forRoot(routes)],  // configura o RouterModule com as rotas que definimos acima.
+  exports: [RouterModule] // disponibiliza o RouterModule para outros módulos que importarem este
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { } // export class AppRoutingModule { } define a classe do módulo que pode ser importada em outros lugares
+
+
+/* ## Diferenças entre app.routes.ts e app-routing.module.ts
+Notei que você tem dois arquivos de roteamento no seu projeto:
+
+- app.routes.ts (que vimos anteriormente)
+- app-routing.module.ts (que estamos vendo agora)
+Isso acontece porque o Angular 19.2 (que você está usando) suporta duas abordagens diferentes para configurar rotas:
+
+1. Abordagem baseada em módulo (app-routing.module.ts): É a abordagem tradicional, que usa NgModule.
+2. Abordagem standalone (app.routes.ts): É a abordagem mais moderna, que não precisa de NgModule.
+Parece que seu projeto está em transição entre essas duas abordagens, o que é comum quando atualizamos projetos Angular. Você provavelmente está migrando da abordagem baseada em módulo para a abordagem standalone, que é mais simples e moderna. */

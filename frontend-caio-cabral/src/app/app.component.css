@@ -1,6 +1,13 @@
-main {
-  min-height: calc(100vh - 250px); /* Ajuste para header e footer */
-  padding-top: 150px; /* Altura do header */
-  padding-bottom: 100px; /* Altura do footer */
-  background-color: #f8f9fa;
+main {  /* Seleciona o elemento <main> que está no seu app.component.html, onde fica o conteúdo principal do seu aplicativo */
+  min-height: calc(100vh - 250px);  /* Define a altura mínima como a altura total da tela menos 250px, garantindo que o conteúdo ocupe quase toda a tela */
+  padding-top: 150px;  /* Adiciona um espaço de 150px no topo para que o conteúdo não fique escondido atrás do cabeçalho fixo */
+  padding-bottom: 100px;  /* Adiciona um espaço de 100px na parte inferior para que o conteúdo não fique colado no rodapé */
+  background-color: #f8f9fa;  /* Define a cor de fundo como um cinza bem clarinho, quase branco, para uma aparência limpa e moderna */
 }
+
+/* Este arquivo é super importante porque:
+
+1. Garante espaço adequado : Ele garante que o conteúdo principal do seu aplicativo tenha espaço suficiente e não seja coberto pelo cabeçalho ou rodapé. É como garantir que sua sala de estar tenha espaço suficiente para você brincar!
+2. Cria consistência visual : A cor de fundo suave (#f8f9fa) cria uma aparência limpa e profissional para todo o seu aplicativo. É como pintar todas as paredes da sua casa da mesma cor para que tudo combine!
+3. Resolve problemas de layout : O min-height garante que mesmo páginas com pouco conteúdo preencham a tela, evitando que o rodapé suba demais. É como garantir que sua casa não pareça vazia, mesmo se você tiver poucos móveis!
+4. Complementa a estrutura HTML : Este CSS trabalha junto com o app.component.html para criar a estrutura básica do seu aplicativo. É como o acabamento que torna sua casa não só funcional, mas também bonita! */
