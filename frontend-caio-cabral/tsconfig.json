@@ -1,9 +1,7 @@
 /* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
-  // Determina se o TypeScript deve compilar automaticamente quando um arquivo é salvo
-  // false: Você precisa usar comandos como ng serve ou ng build para compilar
-  "compileOnSave": false,
+  "compileOnSave": false,   // Determina se o TypeScript deve compilar automaticamente quando um arquivo é salvo   // false: Você precisa usar comandos como ng serve ou ng build para compilar
   "compilerOptions": {   // Opções para o compilador TypeScript - esta é a seção principal de configurações
     "outDir": "./dist/out-tsc",   // Define onde os arquivos compilados serão armazenados
     "strict": true,     // Ativa o modo estrito do TypeScript, que ajuda a evitar erros comuns. É como ter um professor rigoroso verificando seu trabalho!

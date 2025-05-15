@@ -9,7 +9,7 @@
 
     <div *ngIf="user" class="user-details">                         <!-- Seção que mostra detalhes do usuário, visível apenas se user existir -->
       <h3>Detalhes do Usuário</h3>                                  <!-- Subtítulo para a seção de detalhes do usuário -->
-      <p><strong>Nome:</strong> {{ user.name }}</p>                 <!-- Parágrafo que mostra o nome do usuário usando interpolação -->
+      <p><strong>Nome:</strong> {{ user.name }}</p>                 <!-- Esta linha cria um parágrafo (<p>) na tela para mostrar uma informação. Dentro dele, a tag <strong> faz o texto "Nome:" ficar em negrito, para chamar a atenção e dizer que a próxima informação é o nome. A parte mágica do Angular é {{ user.name }}. Isso é chamado de "interpolação", e é como um portal que pega o valor da variável 'name' que está dentro do objeto 'user' lá no seu código TypeScript e o mostra aqui na tela, no lugar das chaves duplas {{ }}. Então, se o nome do usuário for "Maria", a tela vai mostrar "Nome: Maria". É como um espelho que reflete o nome que está guardado no seu programa! -->
       
       <p><strong>Número da Conta:</strong> {{ user.account.number }}</p>  <!-- Parágrafo que mostra o número da conta do usuário -->
       <p><strong>Número da Agência:</strong> {{ user.account.agency }}</p>  <!-- Parágrafo que mostra o número da agência do usuário -->

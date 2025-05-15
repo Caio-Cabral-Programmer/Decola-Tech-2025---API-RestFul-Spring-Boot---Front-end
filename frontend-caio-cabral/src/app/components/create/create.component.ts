@@ -100,11 +100,11 @@ export class CreateComponent implements OnInit {                            // D
   }
 
   // Helper method to mark all controls as touched                          // Comentário explicando o método abaixo
-  markFormGroupTouched(formGroup: FormGroup) {                              // Método auxiliar para marcar todos os controles como tocados
-    Object.values(formGroup.controls).forEach(control => {                  // Percorre todos os controles do grupo de formulário
-      control.markAsTouched();                                              // Marca o controle como tocado para mostrar erros de validação
-      if ((control as any).controls) {                                      // Verifica se o controle tem controles aninhados (é um FormGroup)
-        this.markFormGroupTouched(control as FormGroup);                    // Chama recursivamente o método para o grupo aninhado
+  markFormGroupTouched(formGroup: FormGroup) {                              // Método auxiliar para marcar todos os controles como tocados, ele recebe um grupo de formulário (como a caixa grande do formulário inteiro ou as caixinhas menores de conta/cartão) para trabalhar.
+    Object.values(formGroup.controls).forEach(control => {                  // Pense nisso como abrir a caixa de formulário que você recebeu e pegar todos os "controles" (que são como os campos de texto, números, etc.) que estão diretamente dentro dela, e então, para cada um desses controles, fazer algo.
+      control.markAsTouched();                                              // Esta linha é como "tocar" no controle atual. Ela diz para o Angular: "Este campo foi tocado pelo usuário (ou pelo nosso ajudante aqui)!". Isso é importante para que o Angular saiba quando mostrar mensagens de erro de validação para campos obrigatórios que estão vazios.
+      if ((control as any).controls) {                                      // Aqui, o ajudante verifica se o controle atual que ele está olhando é, na verdade, uma outra "caixinha" de formulário (um FormGroup aninhado, como as caixas de conta ou cartão). Ele usa '(control as any).controls' porque nem todo controle tem outros controles dentro, só os grupos.
+        this.markFormGroupTouched(control as FormGroup);                    // Se o controle atual for uma caixinha (um FormGroup), o ajudante chama a si mesmo de novo, mas agora para essa caixinha menor! Isso é chamado de "recursão", é como um espelho que reflete outro espelho, permitindo que ele vá fundo em todas as caixinhas dentro das caixinhas até tocar em todos os campos.
       }
     });
   }

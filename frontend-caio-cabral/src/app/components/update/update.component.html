@@ -3,7 +3,7 @@
     <div class="update-form">
       <div class="search-id">
         <label for="userId">ID do Usuário:</label>
-        <input type="number" id="userId" [(ngModel)]="userId" (keyup.enter)="searchUser()">
+        <input type="number" id="userId" [(ngModel)]="userId" (keyup.enter)="searchUser()">         <!-- Esta linha cria uma caixa de entrada onde o usuário pode digitar um número. O 'type="number"' garante que o teclado mostre números e que o navegador ajude a validar se é um número mesmo. O 'id="userId"' dá um nome único para esta caixa, que pode ser usado por um rótulo (label) para se conectar a ela, ajudando na acessibilidade. A parte mágica do Angular aqui é '[(ngModel)]="userId"'. Isso é o "two-way data binding", que significa que o valor que você digita nesta caixa é automaticamente guardado na variável 'userId' lá no código TypeScript do componente, e se o valor de 'userId' mudar no TypeScript, o que está escrito na caixa também muda! É como um espelho mágico que mostra o que está na caixa e o que está na variável ao mesmo tempo! E '(keyup.enter)="searchUser()"' é um "ouvinte" especial: ele fica esperando você apertar a tecla "Enter" depois de digitar o número, e quando você aperta, ele chama o método 'searchUser()' lá no seu código TypeScript para procurar o usuário com aquele ID. É como um detetive que começa a procurar assim que você diz o nome do suspeito e aperta "Enter"! -->
         <button class="search-btn" (click)="searchUser()">Buscar</button>
       </div>
 
